@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+
+        *{
+            box-sizing: border-box;
+        }
+
+        .body1{
+            font-family: 'Noto Sans TC';
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form{
+            background: white;
+            padding: 60px;
+            width: 650px;
+            max-width: calc(100%-60px);
+        }
+
+        .form-element{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .form-element span{
+            margin-bottom: 15px;
+        }
+
+        input, textarea{
+            border: 1px solid #d0d2e2;
+            line-height: 1.5;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            width: 160px;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            margin: 15px auto 0px auto;
+            position: relative;
+        }
+
+        /* hide the inputs */
+        .rating input {
+            display: none;
+        }
+
+        /* set properties of all labels */
+        .rating > label {
+            width: 30px;
+            height: 30px;
+            font-family: Arial;
+            font-size: 30px;
+            transition: 0.2s ease;
+            color: orange;
+        }
+
+        /* give label a hover state */
+        .rating label:hover {
+            color: #ff69b4;
+            transition: 0.2s ease;
+        }
+
+        .rating label:active::before {
+            transform:scale(1.1);
+        }
+        
+        /* set shape of unselected label */
+        .rating label::before {
+            content: '\2606';
+            position: absolute;
+            top: 0px;
+            line-height: 26px;
+        }
+
+        /* set full star shape for checked label and those that come after it */
+        .rating input:checked ~ label:before {
+            content:'\2605';
+        }
+
+        form button{
+            width: 100%;
+            padding: 20px;
+            color: #eee;
+            background: #0E639C;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="body1">
+        
+        <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSev6uBeyT1QOLhWvWe_IPZXXccS59lCW1Qe4eZaRGPlykO6OQ/formResponse" id="myForm" name="myForm">
+
+            <div class="form-element">
+                <span>您對第一課內容的滿意程度為何?</span>
+                
+                <div class="rating">
+                <input type="radio" required name="entry.1747016377" id="star5" value="非常滿意">
+                    <label for="star5"></label>
+                <input type="radio" required name="entry.1747016377" id="star4" value="很滿意">
+                    <label for="star4"></label>
+                <input type="radio" required name="entry.1747016377" id="star3" value="滿意">
+                    <label for="star3"></label>
+                <input type="radio" required name="entry.1747016377" id="star2" value="不滿意">
+                    <label for="star2"></label>
+                <input type="radio" required name="entry.1747016377" id="star1" value="非常不滿意">
+                    <label for="star1"></label>
+                </div>
+
+            </div>
+
+            <div class="form-element scale">
+                <span>您覺得第一課內容對於你的生活與工作有多大的幫助？</span>
+
+                <div class="rating">
+                    <input type="radio" required name="entry.681472439" id="stars5" value="幫助非常多">
+                        <label for="stars5"></label>
+                    <input type="radio" required name="entry.681472439" id="stars4" value="幫助很大">
+                        <label for="stars4"></label>
+                    <input type="radio" required name="entry.681472439" id="stars3" value="還可以">
+                        <label for="stars3"></label>
+                    <input type="radio" required name="entry.681472439" id="stars2" value="有一點點的幫助">
+                        <label for="stars2"></label>
+                    <input type="radio" required name="entry.681472439" id="stars1" value="毫無幫助">
+                        <label for="stars1"></label>
+                    </div>
+
+            </div>
+
+            <div class="form-element">
+                <span>這一堂課帶給了您什麼樣的啟發？</span>
+                <textarea name="entry.349499540" id="insight" cols="30" rows="10"></textarea>
+            </div>
+
+            <button type="submit">點擊提交評分反饋</button>
+        </form>
+
+    </div>
+</body>
+</html>
